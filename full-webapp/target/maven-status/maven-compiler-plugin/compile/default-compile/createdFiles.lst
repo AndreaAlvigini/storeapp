@@ -1,0 +1,10 @@
+Main.class
+AcquistoServlet.class
+ClienteDAO.class
+ClienteServlet.class
+ProdottoDAO.class
+Cliente.class
+ProdottoServlet.class
+Acquisto.class
+AcquistoDAO.class
+Prodotto.class

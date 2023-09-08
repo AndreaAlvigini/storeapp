@@ -3,5 +3,16 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+  <!-- Routing /prodotti -->
+    <servlet>
+        <servlet-name>ProdottoServlet</servlet-name>
+        <servlet-class>ProdottoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProdottoServlet</servlet-name>
+        <url-pattern>/prodotti</url-pattern>
+    </servlet-mapping>
 </web-app>

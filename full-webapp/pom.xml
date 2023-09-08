@@ -21,7 +21,7 @@
       <artifactId>sqlite-jdbc</artifactId>
       <version>3.36.0.3</version>
     </dependency>
-    <!-- Dipendenze per Servelet page -->
+    <!-- Dipendenze per Servlet page -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -35,8 +35,15 @@
       <artifactId>javax.servlet.jsp-api</artifactId>
       <version>2.3.3</version>
       <scope>provided</scope>
-
     </dependency>
+
+    <!-- Dipendenze per JSTL e passaggio dati da servlet a jsp -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+      <version>1.2.1</version>
+    </dependency>    
+
   </dependencies>
   <build>
     <finalName>full-webapp</finalName>
