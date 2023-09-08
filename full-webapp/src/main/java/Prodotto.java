@@ -1,8 +1,11 @@
+//Questa é una classe che rappresenta il modello di dati per Prodotto e possiede solo i campi che corrispondono alle colonne nelle tabelle del database.
+
 public class Prodotto {
+    //Specifico i campi che appartengono alla classe Prodotto
     private int id;
     private String nome;
     private double prezzo;
-    //aggiungo descrizione prodotto
+    //aggiungo campo descrizione prodotto
     private String descrizione;
     //aggiunta immagine
     private String immagine;
@@ -15,8 +18,9 @@ public class Prodotto {
         this.id = id;
         this.nome = nome;
         this.prezzo = prezzo;
-        //descrizione e immagine aggiunte
+        //aggiungiamo descrizione
         this.descrizione = descrizione;
+        //aggiungiamo immimmagine
         this.immagine = immagine;
     }
 
@@ -46,7 +50,7 @@ public class Prodotto {
         this.prezzo = prezzo;
     }
 
-    //aggiungo descrizione get set
+    //aggiungo Getter Setter descrizione
     public String getDescrizione() {
         return descrizione;
     }
@@ -55,7 +59,7 @@ public class Prodotto {
         this.descrizione = descrizione;
     }
 
-    // immagine set get
+    //aggiungo Getter Setter Immagine, immagine é una stringa perché corrispode a un url
 
     public String getImmagine() {
         return immagine;

@@ -25,6 +25,7 @@ public class ProdottoDAO {
                 p.setId(rs.getInt("id"));
                 p.setNome(rs.getString("nome"));
                 p.setPrezzo(rs.getDouble("prezzo"));
+                //aggiungere i campi
                 prodotti.add(p);
             }
 
@@ -69,9 +70,12 @@ public class ProdottoDAO {
             stmt.setDouble(2, p.getPrezzo());
             stmt.executeUpdate();
 
+            
+
         } catch (SQLException e) {
             // gestisci l'eccezione
             e.printStackTrace();
         }
     }
+    //inserire cancella prodotto
 }

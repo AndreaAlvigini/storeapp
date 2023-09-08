@@ -1,12 +1,14 @@
-//Questa é una classe che rappresenta il modello di dati per Acquisto, possiede solo i campi che corrispondono alle colonne nelle tabelle del database
-import java.util.Date;
+//Questa é una classe che rappresenta il modello di dati per Acquisto e possiede solo i campi che corrispondono alle colonne nelle tabelle del database.
+
+import java.util.Date;//Classe usata per rappresentare il campo dataAcquisto. Questa classe fa parte del pacchetto java.util e rappresenta un istante specifico nel tempo
 
 public class Acquisto {
+    //Specifico i campi che appartengono alla classe Acquisto
     private int id;
     private int idProdotto;
     private int idCliente;
     private Date dataAcquisto;
-    //aggiunto tot
+    //aggiunto il campo Tot
     private int tot;
 
     // Costruttore vuoto
@@ -18,12 +20,13 @@ public class Acquisto {
         this.idProdotto = idProdotto;
         this.idCliente = idCliente;
         this.dataAcquisto = dataAcquisto;
-        // Agiunto costruttore con parametri per totale
+        // Agiunto costruttore con parametri per il campo "Totale"
         this.tot= tot;
     }
 
     // Getter e Setter per accedere e modificare i valori dei campi
 
+    //Getter e Setter per Id acquisto
     public int getId() {
         return id;
     }
@@ -31,7 +34,8 @@ public class Acquisto {
     public void setId(int id) {
         this.id = id;
     }
-
+    
+    //Getter e Setter per Id Prodotto
     public int getIdProdotto() {
         return idProdotto;
     }
@@ -39,7 +43,8 @@ public class Acquisto {
     public void setIdProdotto(int idProdotto) {
         this.idProdotto = idProdotto;
     }
-
+    
+    //Getter e Setter per Id cliente
     public int getIdCliente() {
         return idCliente;
     }
@@ -48,6 +53,7 @@ public class Acquisto {
         this.idCliente = idCliente;
     }
 
+    //Getter e Setter per Data acquisto
     public Date getDataAcquisto() {
         return dataAcquisto;
     }
@@ -56,7 +62,7 @@ public class Acquisto {
         this.dataAcquisto = dataAcquisto;
     }
 
-    //aggiunto getter e setter per totale
+    //Aggiunto Getter e Setter per Totale
     public int getTot() {
         return tot;
     }

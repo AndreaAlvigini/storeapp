@@ -1,4 +1,6 @@
+//Questa é una classe che rappresenta il modello di dati per Cliente e possiede solo i campi che corrispondono alle colonne nelle tabelle del database.
 public class Cliente {
+    //Specifico i campi che appartengono alla classe Cliente
     private int id;
     private String nome;
     private String email;
@@ -8,6 +10,7 @@ public class Cliente {
     private String indirizzo;
     //aggiungo telefono
     private String telefono;
+
 
     // Costruttore vuoto
     public Cliente() {
