@@ -8,27 +8,27 @@ import java.util.List;
 
 public class ClienteDAO {
 
-    private Connection conn;
+    private Connection conn;//connessione
 
-    public ClienteDAO(Connection conn) {
+    public ClienteDAO(Connection conn) {//costruttore di classe
         this.conn = conn;
     }
 
     public List<Cliente> getAllClienti() { //metodo che resituisce una lista di oggetti Cliente
-        List<Cliente> clienti = new ArrayList<>();
+        List<Cliente> clienti = new ArrayList<>(); //creazione della lista
 
         try (Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM clienti")) {
 
             while (rs.next()) {
-                Cliente c = new Cliente();
-                c.setId(rs.getInt("id"));
+                Cliente c = new Cliente(); //creazione oggetto Cliente
+                c.setId(rs.getInt("id")); //assegno i valori a CLiente in base alla riga del ResultSet
                 c.setNome(rs.getString("nome"));
                 c.setIndirizzo(rs.getString("indirizzo"));
                 c.setEmail(rs.getString("email"));
                 c.setTelefono(rs.getString("telefono"));
                 c.setPunti(rs.getInt("punti"));
-                clienti.add(c);
+                clienti.add(c);//aggiungo alla lista Cliente valori completi
             }
 
         } catch (SQLException e) {
@@ -65,10 +65,10 @@ public class ClienteDAO {
             e.printStackTrace();
         }
 
-        return c;
+        return c;//riporto la lista con i dati CLiente
     }
 
-    public void insertCliente(Cliente c) {
+    public void insertCliente(Cliente c) {//metodo di selezione di un Acquisto che prende in input l'id e restituisce l'Acquisto corrispondente
         try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO clienti (nome, indirizzo, email, telefono, punti) VALUES (?, ?, ?, ?, ?)")) {
 
             stmt.setString(1, c.getNome());
