@@ -69,7 +69,7 @@ public class ClienteDAO {
     }
 
     public void insertCliente(Cliente c) {
-        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO clienti (nome, email) VALUES (?, ?)")) {
+        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO clienti (nome, indirizzo, email, telefono, punti) VALUES (?, ?, ?, ?, ?)")) {
 
             stmt.setString(1, c.getNome());
             stmt.setString(2, c.getIndirizzo());

@@ -28,6 +28,7 @@ public class ProdottoDAO {
                 p.setNome(rs.getString("nome"));
                 p.setDescrizione(rs.getString("descrizione"));
                 p.setPrezzo(rs.getDouble("prezzo"));
+                p.setImmagine(rs.getString("immagine"));
                 prodotti.add(p);
             }
 
@@ -75,11 +76,21 @@ public class ProdottoDAO {
             stmt.setDouble(3, p.getPrezzo());
             stmt.setString(4, p.getImmagine());
             stmt.executeUpdate();
+        }catch (SQLException e) {
+            // gestisci l'eccezione
+            e.printStackTrace();
+        }
 
-        } catch (SQLException e) {
+        
+    }
+
+    public void cancellaProdotto(int id){ //metodo per cancellare un prodotto che prende in input l'id
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM prodotti WHERE id = ?")){
+            stmt.setInt(1, id); // Cancella il prodotto in base all'id
+            stmt.executeUpdate();
+        }catch (SQLException e) {
             // gestisci l'eccezione
             e.printStackTrace();
         }
     }
-    //inserire cancella prodotto
 }

@@ -1,4 +1,4 @@
-# FULL WEB APP 
+# FULL WEB APP
 
 - Impostazione dell'ambiente di sviluppo:
 Prima di tutto, assicurati di avere installato Java, Maven, SQLite e Visual Studio Code. Installa anche l'extension pack Java per Visual Studio Code.
@@ -16,7 +16,7 @@ Prima di tutto, assicurati di avere installato Java, Maven, SQLite e Visual Stud
 - Crea le classi Java che rappresentano il tuo modello di dati. Queste classi avranno campi che corrispondono alle colonne nelle tabelle del tuo database.
 
 **Implementazione del DAO:**
-- Crea un Data Access Object (DAO) per interagire con il database. Il DAO incapsulerà la logica SQL necessaria per creare, leggere, aggiornare e cancellare record nel database.
+- Crea un Data Access Object (DAO) per interagire con il database. Il DAO incapsulerï¿½ la logica SQL necessaria per creare, leggere, aggiornare e cancellare record nel database.
 
 **Creazione dei Servlet:**
 - Crea i Servlet che gestiranno le richieste HTTP per la tua applicazione. Ad esempio, potresti avere un Servlet per gestire la registrazione degli utenti, un altro per gestire l'accesso, etc.
@@ -28,12 +28,12 @@ Prima di tutto, assicurati di avere installato Java, Maven, SQLite e Visual Stud
 - Configura il tuo web.xml per mappare le URL alle classi Servlet.
 
 **Implementazione dell'autenticazione:**
-- Per creare pagine riservate agli utenti, dovrai implementare un qualche tipo di autenticazione. Ciò potrebbe includere il controllo delle credenziali di accesso durante il login e il salvataggio dell'ID dell'utente nella sessione.
+- Per creare pagine riservate agli utenti, dovrai implementare un qualche tipo di autenticazione. Ciï¿½ potrebbe includere il controllo delle credenziali di accesso durante il login e il salvataggio dell'ID dell'utente nella sessione.
 
 **Test dell'applicazione:**
 - Infine, testa la tua applicazione web. Puoi farlo usando il plugin jetty-maven-plugin o tomcat-maven-plugin, che ti permetteranno di eseguire la tua applicazione web direttamente da Maven.
 
-Ricorda che questo è solo un esempio di alto livello di come potresti strutturare il tuo progetto. Potresti dover adattare questi passaggi in base alle tue esigenze specifiche.
+Ricorda che questo ï¿½ solo un esempio di alto livello di come potresti strutturare il tuo progetto. Potresti dover adattare questi passaggi in base alle tue esigenze specifiche.
 
 ## AGGIUNTA DELLE DIPENDENZE
 
@@ -83,7 +83,7 @@ L'aggiunta delle dipendenze nel tuo progetto Maven avviene tramite il file pom.x
 
 Ricorda di sostituire le versioni delle dipendenze con le versioni attuali al momento dello sviluppo. Puoi trovare queste informazioni nel Maven Repository.
 
-Nell'esempio sopra, la scope delle dipendenze Servlet e JSP è impostata a provided. Ciò significa che queste librerie sono previste per essere fornite dal server di servlet (ad esempio, Tomcat o Jetty) al momento dell'esecuzione, quindi non devono essere incluse nel pacchetto di guerra dell'applicazione
+Nell'esempio sopra, la scope delle dipendenze Servlet e JSP ï¿½ impostata a provided. Ciï¿½ significa che queste librerie sono previste per essere fornite dal server di servlet (ad esempio, Tomcat o Jetty) al momento dell'esecuzione, quindi non devono essere incluse nel pacchetto di guerra dell'applicazione
 
 ## CREA DATABASE DA SCRIPT
 
@@ -105,21 +105,21 @@ Aggiungi la cartella alla variabile di ambiente PATH del tuo sistema.
 
 2. macOS:
 
-SQLite viene fornito preinstallato su macOS. Tuttavia, se desideri utilizzare una versione più recente, puoi installarla utilizzando Homebrew:
+SQLite viene fornito preinstallato su macOS. Tuttavia, se desideri utilizzare una versione piï¿½ recente, puoi installarla utilizzando Homebrew:
 
 
 brew install sqlite
 
 3. Linux:
 
-Su molte distribuzioni Linux, SQLite è già preinstallato. Se non lo è, puoi installarlo utilizzando il gestore di pacchetti del tuo sistema. Ad esempio, su Ubuntu, puoi fare:
+Su molte distribuzioni Linux, SQLite ï¿½ giï¿½ preinstallato. Se non lo ï¿½, puoi installarlo utilizzando il gestore di pacchetti del tuo sistema. Ad esempio, su Ubuntu, puoi fare:
 
 >sudo apt-get update
 sudo apt-get install sqlite3
 
 Dopo aver installato SQLite, dovresti essere in grado di avviare il comando sqlite3 dalla riga di comando.
 
-Puoi creare un nuovo database SQLite digitando sqlite3 mydatabase.db. Questo comando creerà un nuovo file mydatabase.db (o aprirà un file esistente con quel nome) e ti porterà in una shell
+Puoi creare un nuovo database SQLite digitando sqlite3 mydatabase.db. Questo comando creerï¿½ un nuovo file mydatabase.db (o aprirï¿½ un file esistente con quel nome) e ti porterï¿½ in una shell
 
 Ecco un esempio su come creare un database chiamato mydatabase.db con tre tabelle: prodotti, clienti e acquisti.
 
@@ -133,7 +133,7 @@ INSERT INTO prodotti (nome, prezzo) VALUES ('Prodotto3', 20.99);
 
 ```
 
-Questo creerà un nuovo database SQLite chiamato **mydatabase.db** e ti aprirà una shell interattiva SQLite per quel database.
+Questo creerï¿½ un nuovo database SQLite chiamato **mydatabase.db** e ti aprirï¿½ una shell interattiva SQLite per quel database.
 
 Ora, puoi creare le tabelle. Ecco un esempio di come potresti strutturare le tue tabelle:
 
@@ -165,7 +165,7 @@ In questo esempio, prodotti ha tre colonne: id, nome e prezzo. clienti ha tre co
 
 Le colonne id_prodotto e id_cliente in acquisti sono chiavi esterne che fanno riferimento alle rispettive tabelle prodotti e clienti.
 
-Ricorda che questa è solo una struttura di tabelle di esempio, potrebbe essere necessario adattarla in base alle esigenze specifiche della tua applicazione.
+Ricorda che questa ï¿½ solo una struttura di tabelle di esempio, potrebbe essere necessario adattarla in base alle esigenze specifiche della tua applicazione.
 
 ## INSERISCI I DATI
 
@@ -217,9 +217,9 @@ public class Acquisto {
 
 Ogni classe ha campi che corrispondono alle colonne nella tabella corrispondente del database. Ad esempio, la classe Prodotto ha un campo id, un campo nome e un campo prezzo che corrispondono alle colonne id, nome e prezzo nella tabella prodotti.
 
-Le classi dovrebbero avere costruttori per inizializzare i campi, così come getter e setter per accedere e modificare i valori dei campi.
+Le classi dovrebbero avere costruttori per inizializzare i campi, cosï¿½ come getter e setter per accedere e modificare i valori dei campi.
 
-Nota che la classe Acquisto ha i campi idProdotto e idCliente per memorizzare le chiavi esterne che fanno riferimento alle tabelle prodotti e clienti. In un'applicazione del mondo reale, potrebbe essere più utile avere campi Prodotto e Cliente invece di idProdotto e idCliente, in modo da poter accedere direttamente agli oggetti Prodotto e Cliente correlati. Tuttavia, ciò renderebbe il modello di dati più complesso, poiché dovresti gestire le relazioni tra gli oggetti
+Nota che la classe Acquisto ha i campi idProdotto e idCliente per memorizzare le chiavi esterne che fanno riferimento alle tabelle prodotti e clienti. In un'applicazione del mondo reale, potrebbe essere piï¿½ utile avere campi Prodotto e Cliente invece di idProdotto e idCliente, in modo da poter accedere direttamente agli oggetti Prodotto e Cliente correlati. Tuttavia, ciï¿½ renderebbe il modello di dati piï¿½ complesso, poichï¿½ dovresti gestire le relazioni tra gli oggetti
 
 Ecco un esempio di come potrebbero essere implementati i costruttori, i getter e i setter per la classe Prodotto. Le stesse tecniche possono essere applicate per le classi Cliente e Acquisto
 
@@ -371,13 +371,13 @@ public class Acquisto {
 
 ```
 
-I costruttori, i getter e i setter sono una parte fondamentale delle classi del modello dei dati. Il costruttore è un metodo speciale utilizzato per inizializzare l'oggetto quando viene creato. Puoi avere costruttori con o senza parametri.
+I costruttori, i getter e i setter sono una parte fondamentale delle classi del modello dei dati. Il costruttore ï¿½ un metodo speciale utilizzato per inizializzare l'oggetto quando viene creato. Puoi avere costruttori con o senza parametri.
 
 I getter e i setter sono metodi che ti permettono di accedere e modificare i valori dei campi privati di un'istanza di classe. I getter sono metodi senza parametri che restituiscono il valore del campo, mentre i setter sono metodi con un parametro corrispondente al tipo di campo, che impostano il valore del campo a quello del parametro.
 
-Questi metodi sono un esempio di incapsulamento, uno dei pilastri fondamentali dell'Object Oriented Programming (OOP). Grazie all'incapsulamento, i campi di una classe possono essere resi privati e accessibili solo tramite i metodi getter e setter, il che mantiene l'integrità dei dati
+Questi metodi sono un esempio di incapsulamento, uno dei pilastri fondamentali dell'Object Oriented Programming (OOP). Grazie all'incapsulamento, i campi di una classe possono essere resi privati e accessibili solo tramite i metodi getter e setter, il che mantiene l'integritï¿½ dei dati
 
-Nel caso della classe Acquisto, si noti l'uso della classe Date per rappresentare il campo dataAcquisto. Questa classe è parte del pacchetto java.util e rappresenta un istante specifico nel tempo
+Nel caso della classe Acquisto, si noti l'uso della classe Date per rappresentare il campo dataAcquisto. Questa classe ï¿½ parte del pacchetto java.util e rappresenta un istante specifico nel tempo
 
 **Implementazione del DAO: Crea un Data Access Object (DAO) per interagire con la sorgente dei dati per ottenere e memorizzare i dati**
 
@@ -441,13 +441,13 @@ public class ProdottoDAO {
 
 Nell'esempio sopra, il ProdottoDAO ha un metodo getAllProdotti per ottenere tutti i prodotti dal database, un metodo getProdottoById per ottenere un singolo prodotto per id, e un metodo insertProdotto per inserire un nuovo prodotto nel database.
 
-Per eseguire le query SQL, il DAO utilizza gli oggetti Statement e PreparedStatement. Questi oggetti consentono di eseguire comandi SQL statici e parametrizzati, rispettivamente. Il risultato di una query viene restituito in un oggetto ResultSet, che può essere iterato per ottenere i dati.
+Per eseguire le query SQL, il DAO utilizza gli oggetti Statement e PreparedStatement. Questi oggetti consentono di eseguire comandi SQL statici e parametrizzati, rispettivamente. Il risultato di una query viene restituito in un oggetto ResultSet, che puï¿½ essere iterato per ottenere i dati.
 
-Ricorda che questo è solo un esempio di base. In un'applicazione del mondo reale, dovresti implementare il controllo degli errori e la gestione delle eccezioni, e potresti voler utilizzare un connection pool per gestire le connessioni al database. Inoltre, dovresti assicurarti di chiudere sempre le tue risorse JDBC (Connection, Statement e ResultSet) in un blocco finally per prevenire perdite di risorse.
+Ricorda che questo ï¿½ solo un esempio di base. In un'applicazione del mondo reale, dovresti implementare il controllo degli errori e la gestione delle eccezioni, e potresti voler utilizzare un connection pool per gestire le connessioni al database. Inoltre, dovresti assicurarti di chiudere sempre le tue risorse JDBC (Connection, Statement e ResultSet) in un blocco finally per prevenire perdite di risorse.
 
 # la gestione corretta delle risorse in JDBC
 
-**la gestione corretta delle risorse in JDBC è fondamentale per prevenire problemi come le perdite di memoria****. Una pratica comune è chiudere le risorse JDBC in un blocco finally, che viene eseguito indipendentemente dal fatto che si verifichi un'eccezione o meno.
+**la gestione corretta delle risorse in JDBC ï¿½ fondamentale per prevenire problemi come le perdite di memoria****. Una pratica comune ï¿½ chiudere le risorse JDBC in un blocco finally, che viene eseguito indipendentemente dal fatto che si verifichi un'eccezione o meno.
 
 Ecco un esempio di come potresti farlo:
 
@@ -493,7 +493,7 @@ public List<Prodotto> getAllProdotti() {
 
 In questo esempio, il Statement e il ResultSet sono inizializzati a null all'inizio del metodo. Poi, nel blocco try, vengono effettivamente creati e utilizzati per eseguire la query e processare i risultati. Se tutto va bene, le risorse vengono chiuse nel blocco finally.
 
-Tuttavia, a partire da Java 7, è possibile utilizzare il try-with-resources statement per una gestione più elegante e sicura delle risorse. Questo nuovo tipo di dichiarazione try assicura che ogni risorsa sarà chiusa alla fine del blocco. Ecco come potrebbe apparire con un try-with-resources:
+Tuttavia, a partire da Java 7, ï¿½ possibile utilizzare il try-with-resources statement per una gestione piï¿½ elegante e sicura delle risorse. Questo nuovo tipo di dichiarazione try assicura che ogni risorsa sarï¿½ chiusa alla fine del blocco. Ecco come potrebbe apparire con un try-with-resources:
 
 ```java
 
@@ -520,7 +520,7 @@ public List<Prodotto> getAllProdotti() {
 
 ```
 
-In questo esempio, Statement e ResultSet sono dichiarati nel try-with-resources statement. Alla fine del blocco try, verranno chiusi automaticamente, anche se si verifica un'eccezione. Questo rende il codice più breve e facile da mantenere.
+In questo esempio, Statement e ResultSet sono dichiarati nel try-with-resources statement. Alla fine del blocco try, verranno chiusi automaticamente, anche se si verifica un'eccezione. Questo rende il codice piï¿½ breve e facile da mantenere.
 
 # try-with-resources ProdottoDAO
 
@@ -608,7 +608,7 @@ public class ProdottoDAO {
 
 ```
 
-Questi DAO seguono lo stesso modello del ProdottoDAO, con metodi per ottenere tutte le entità, ottenere un'entità per id e inserire una nuova entità nel database. Ricorda, devi gestire le eccezioni in modo appropriato per la tua applicazione
+Questi DAO seguono lo stesso modello del ProdottoDAO, con metodi per ottenere tutte le entitï¿½, ottenere un'entitï¿½ per id e inserire una nuova entitï¿½ nel database. Ricorda, devi gestire le eccezioni in modo appropriato per la tua applicazione
 
 // AcquistoDAO.java
 
@@ -838,7 +838,7 @@ sqlite3 database.db
 
 ```
 
-Questo creerà un nuovo database SQLite chiamato mydatabase.db e ti aprirà una shell interattiva SQLite per quel database.
+Questo creerï¿½ un nuovo database SQLite chiamato mydatabase.db e ti aprirï¿½ una shell interattiva SQLite per quel database.
 
 Ora, puoi creare le tabelle. Ecco un esempio di come potresti strutturare le tue tabelle:
 
@@ -881,7 +881,7 @@ INSERT INTO acquisti (id_prodotto, id_cliente, data_acquisto) VALUES (3, 3, '202
 
 In questo esempio, prodotti ha tre colonne: id, nome e prezzo. clienti ha tre colonne: id, nome e email. acquisti ha quattro colonne: id, id_prodotto, id_cliente e data_acquisto. Le colonne id_prodotto e id_cliente in acquisti sono chiavi esterne che fanno riferimento alle rispettive tabelle prodotti e clienti
 
-**oppure script aòternativ**
+**oppure script aï¿½ternativ**
 
 Apri la linea di comando e digita:
 
@@ -1055,13 +1055,13 @@ public class AcquistoServlet extends HttpServlet {
 
 ```
 
-Nota che in ogni servlet, utilizziamo il metodo doGet() per gestire le richieste HTTP GET. Queste richieste ritornano una lista di entità (prodotti, clienti o acquisti) dal database e le inoltrano a una pagina JSP per la visualizzazione. Devi sostituire "prodotti.jsp", "clienti.jsp" e "acquisti.jsp" con le tue vere pagine JSP.
+Nota che in ogni servlet, utilizziamo il metodo doGet() per gestire le richieste HTTP GET. Queste richieste ritornano una lista di entitï¿½ (prodotti, clienti o acquisti) dal database e le inoltrano a una pagina JSP per la visualizzazione. Devi sostituire "prodotti.jsp", "clienti.jsp" e "acquisti.jsp" con le tue vere pagine JSP.
 
 Le pagine JSP sono utilizzate per creare l'interfaccia utente dell'applicazione. Creeremo pagine JSP per visualizzare i prodotti, i clienti e gli acquisti.
 
-Le espressioni come <c:forEach>, <c:out> e altri simili sono parte del Tag Library Standard (JSTL), che è una libreria utilizzata nelle pagine JSP per semplificare la gestione dei dati e la logica nelle pagine JSP. Di seguito, ti darò una breve spiegazione di alcuni dei tag JSTL più comuni:
+Le espressioni come <c:forEach>, <c:out> e altri simili sono parte del Tag Library Standard (JSTL), che ï¿½ una libreria utilizzata nelle pagine JSP per semplificare la gestione dei dati e la logica nelle pagine JSP. Di seguito, ti darï¿½ una breve spiegazione di alcuni dei tag JSTL piï¿½ comuni:
 
-<c:forEach>: Questo tag viene utilizzato per iterare su una collezione di oggetti e ripetere il contenuto del suo corpo per ogni elemento nella collezione. È molto utile per la creazione di tabelle e liste dinamiche.
+<c:forEach>: Questo tag viene utilizzato per iterare su una collezione di oggetti e ripetere il contenuto del suo corpo per ogni elemento nella collezione. ï¿½ molto utile per la creazione di tabelle e liste dinamiche.
 
 Esempio:
 
@@ -1083,19 +1083,19 @@ Esempio:
 
 ```
 
-<c:if> e <c:choose>: Questi tag vengono utilizzati per condizionare l'output in base a una condizione. <c:if> viene utilizzato per eseguire un blocco di codice se una condizione è vera, mentre <c:choose> consente di selezionare uno dei blocchi di codice in base a una serie di condizioni.
+<c:if> e <c:choose>: Questi tag vengono utilizzati per condizionare l'output in base a una condizione. <c:if> viene utilizzato per eseguire un blocco di codice se una condizione ï¿½ vera, mentre <c:choose> consente di selezionare uno dei blocchi di codice in base a una serie di condizioni.
 
 Esempio:
 
 ```jsp
 
 <c:if test="${condizione}">
-    <!-- Codice da eseguire se la condizione è vera -->
+    <!-- Codice da eseguire se la condizione ï¿½ vera -->
 </c:if>
 
 ```
 
-<c:set>: Questo tag viene utilizzato per assegnare un valore a una variabile, che può essere utilizzata successivamente nella pagina JSP. È utile per evitare di eseguire la stessa espressione più volte.
+<c:set>: Questo tag viene utilizzato per assegnare un valore a una variabile, che puï¿½ essere utilizzata successivamente nella pagina JSP. ï¿½ utile per evitare di eseguire la stessa espressione piï¿½ volte.
 
 Esempio:
 
@@ -1105,7 +1105,7 @@ Esempio:
 
 ```
 
-<c:url>: Questo tag viene utilizzato per generare URL dinamicamente. Puoi specificare i parametri dell'URL e il tag costruirà l'URL completo per te.
+<c:url>: Questo tag viene utilizzato per generare URL dinamicamente. Puoi specificare i parametri dell'URL e il tag costruirï¿½ l'URL completo per te.
 
 Esempio:
 
@@ -1117,7 +1117,7 @@ Esempio:
 
 ```
 
-Questi sono solo alcuni dei tag JSTL più comuni. La JSTL offre molti altri tag per gestire le operazioni comuni nelle pagine JSP, come il formattamento delle date, la manipolazione delle stringhe e la gestione delle collezioni. È una libreria molto utile per semplificare lo sviluppo di pagine JSP.
+Questi sono solo alcuni dei tag JSTL piï¿½ comuni. La JSTL offre molti altri tag per gestire le operazioni comuni nelle pagine JSP, come il formattamento delle date, la manipolazione delle stringhe e la gestione delle collezioni. ï¿½ una libreria molto utile per semplificare lo sviluppo di pagine JSP.
 
 # visualizzare i valori delle variabili
 
@@ -1224,7 +1224,7 @@ acquisti.jsp
 
 ```
 
-Queste pagine JSP utilizzano l'attributo items della taglib JSTL <c:forEach> per iterare attraverso le liste di prodotti, clienti e acquisti passate come attributi di richiesta dai rispettivi servlet. Per ogni entità, stampa i dettagli in una nuova riga della tabella HTML.
+Queste pagine JSP utilizzano l'attributo items della taglib JSTL <c:forEach> per iterare attraverso le liste di prodotti, clienti e acquisti passate come attributi di richiesta dai rispettivi servlet. Per ogni entitï¿½, stampa i dettagli in una nuova riga della tabella HTML.
 
 Ricorda che dovrai includere la libreria JSTL nel tuo progetto per utilizzare <c:forEach>. Se stai utilizzando Maven, puoi aggiungere questa dipendenza al tuo pom.xml:
 
@@ -1245,7 +1245,7 @@ Ricorda che dovrai includere la libreria JSTL nel tuo progetto per utilizzare <c
 
 # Configurazione del file web.xml 
 
-Il file web.xml è il file di configurazione per l'applicazione web e si trova solitamente nella directory WEB-INF. Questo file è utilizzato per definire i servlet, i filtri, i listener e altre componenti, insieme alle rispettive proprietà di configurazione e mappatura URL.
+Il file web.xml ï¿½ il file di configurazione per l'applicazione web e si trova solitamente nella directory WEB-INF. Questo file ï¿½ utilizzato per definire i servlet, i filtri, i listener e altre componenti, insieme alle rispettive proprietï¿½ di configurazione e mappatura URL.
 
 Qui di seguito un esempio di configurazione per il file web.xml:
 
@@ -1322,13 +1322,13 @@ Per accedere alle pagine dell'applicazione Java Maven che hai configurato nel fi
 
 Supponendo che tu stia eseguendo l'applicazione localmente sul tuo computer, puoi accedere alle pagine nel seguente modo:
 
-Pagina dei Prodotti: Vai al tuo browser web e inserisci l'URL http://localhost:8080/prodotti, dove yourAppName dovrebbe essere sostituito con il nome dell'applicazione web che hai configurato. Questo URL ti porterà alla pagina gestita dalla servlet ProdottoServlet.
+Pagina dei Prodotti: Vai al tuo browser web e inserisci l'URL http://localhost:8080/prodotti, dove yourAppName dovrebbe essere sostituito con il nome dell'applicazione web che hai configurato. Questo URL ti porterï¿½ alla pagina gestita dalla servlet ProdottoServlet.
 
-Pagina dei Clienti: Per accedere alla pagina dei clienti, inserisci l'URL http://localhost:8080/clienti nel tuo browser. Questo URL ti porterà alla pagina gestita dalla servlet ClienteServlet.
+Pagina dei Clienti: Per accedere alla pagina dei clienti, inserisci l'URL http://localhost:8080/clienti nel tuo browser. Questo URL ti porterï¿½ alla pagina gestita dalla servlet ClienteServlet.
 
-Pagina degli Acquisti: Infine, per accedere alla pagina degli acquisti, inserisci l'URL http://localhost:8080/acquisti nel tuo browser. Questo URL ti porterà alla pagina gestita dalla servlet AcquistoServlet.
+Pagina degli Acquisti: Infine, per accedere alla pagina degli acquisti, inserisci l'URL http://localhost:8080/acquisti nel tuo browser. Questo URL ti porterï¿½ alla pagina gestita dalla servlet AcquistoServlet.
 
-Ricorda che localhost:8080 è l'indirizzo predefinito per il server locale quando esegui l'applicazione in modalità di sviluppo. Assicurati di avere l'applicazione in esecuzione e che il nome dell'applicazione nell'URL corrisponda a quanto configurato nel tuo ambiente.
+Ricorda che localhost:8080 ï¿½ l'indirizzo predefinito per il server locale quando esegui l'applicazione in modalitï¿½ di sviluppo. Assicurati di avere l'applicazione in esecuzione e che il nome dell'applicazione nell'URL corrisponda a quanto configurato nel tuo ambiente.
 
 Per assicurarti che l'applicazione Java Maven sia in esecuzione, segui questi passaggi:
 
@@ -1351,13 +1351,13 @@ mvn jetty:run
 ```
 Per altri container, dovresti avviarli secondo le istruzioni specifiche del container.
 
-Verifica l'URL: Una volta che il server web è in esecuzione, puoi utilizzare il tuo browser web per accedere alle pagine dell'applicazione tramite gli URL configurati nel tuo file web.xml. Assicurati di avere l'URL corretto e che corrisponda alla configurazione delle servlet nel tuo web.xml, come descritto nelle risposte precedenti.
+Verifica l'URL: Una volta che il server web ï¿½ in esecuzione, puoi utilizzare il tuo browser web per accedere alle pagine dell'applicazione tramite gli URL configurati nel tuo file web.xml. Assicurati di avere l'URL corretto e che corrisponda alla configurazione delle servlet nel tuo web.xml, come descritto nelle risposte precedenti.
 
-Controlla i Log del Server: Durante l'avvio del server web, dovresti vedere i log che indicano che l'applicazione è stata distribuita con successo. Questi log ti diranno anche su quale porta è in ascolto il server (solitamente la porta 8080 per Jetty o Tomcat). Puoi controllare i log per eventuali errori o eccezioni che potrebbero impedire l'avvio dell'applicazione.
+Controlla i Log del Server: Durante l'avvio del server web, dovresti vedere i log che indicano che l'applicazione ï¿½ stata distribuita con successo. Questi log ti diranno anche su quale porta ï¿½ in ascolto il server (solitamente la porta 8080 per Jetty o Tomcat). Puoi controllare i log per eventuali errori o eccezioni che potrebbero impedire l'avvio dell'applicazione.
 
 Risolvi gli Errori: Se incontri errori durante l'avvio, dovrai risolverli. Gli errori comuni includono problemi con le dipendenze del progetto, errori di configurazione del server o errori nel tuo codice Java. Analizza attentamente i messaggi di errore nei log e cerca una soluzione specifica per il problema che stai riscontrando.
 
-Una volta che l'applicazione è in esecuzione con successo e il server è in ascolto sulla porta specificata, dovresti essere in grado di accedere alle pagine dell'applicazione tramite il browser utilizzando gli URL configurati. Assicurati di avere anche il tuo server web in esecuzione mentre stai cercando di accedere alle pagine dell'applicazione.
+Una volta che l'applicazione ï¿½ in esecuzione con successo e il server ï¿½ in ascolto sulla porta specificata, dovresti essere in grado di accedere alle pagine dell'applicazione tramite il browser utilizzando gli URL configurati. Assicurati di avere anche il tuo server web in esecuzione mentre stai cercando di accedere alle pagine dell'applicazione.
 
 Pulisci la cache di Maven: A volte, i problemi di risoluzione delle dipendenze possono essere risolti eliminando la cache di Maven. Puoi farlo eliminando la directory .m2/repository nella tua directory utente o eseguendo il comando:
 

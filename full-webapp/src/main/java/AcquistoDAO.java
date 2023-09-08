@@ -67,7 +67,7 @@ public class AcquistoDAO {
     }
 
     public void insertAcquisto(Acquisto a) { //metodo che prende in input un Acquisto (a) da inserire
-        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO acquisti (id_Prodotto, id_Cliente, data_Acquisto) VALUES (?, ?, ?)")) {
+        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO acquisti (data, id_prodotto, id_cliente, totale) VALUES (?, ?, ?, ?)")) {
 
             stmt.setDate(1, new java.sql.Date(a.getDataAcquisto().getTime()));
             stmt.setInt(2, a.getIdProdotto());
