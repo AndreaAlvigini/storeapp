@@ -1,3 +1,4 @@
+//Questa é una classe che rappresenta il modello di dati per Acquisto, possiede solo i campi che corrispondono alle colonne nelle tabelle del database
 import java.util.Date;
 
 public class Acquisto {
@@ -5,19 +6,23 @@ public class Acquisto {
     private int idProdotto;
     private int idCliente;
     private Date dataAcquisto;
+    //aggiunto tot
+    private int tot;
 
     // Costruttore vuoto
     public Acquisto() {}
 
     // Costruttore con parametri
-    public Acquisto(int id, int idProdotto, int idCliente, Date dataAcquisto) {
+    public Acquisto(int id, int idProdotto, int idCliente, Date dataAcquisto, int tot) {
         this.id = id;
         this.idProdotto = idProdotto;
         this.idCliente = idCliente;
         this.dataAcquisto = dataAcquisto;
+        // Agiunto costruttore con parametri per totale
+        this.tot= tot;
     }
 
-    // Getter e Setter
+    // Getter e Setter per accedere e modificare i valori dei campi
 
     public int getId() {
         return id;
@@ -49,5 +54,14 @@ public class Acquisto {
 
     public void setDataAcquisto(Date dataAcquisto) {
         this.dataAcquisto = dataAcquisto;
+    }
+
+    //aggiunto getter e setter per totale
+    public int getTot() {
+        return tot;
+    }
+
+    public void setTotale(int tot) {
+        this.tot = tot;
     }
 }
