@@ -14,7 +14,7 @@ public class ClienteDAO {
         this.conn = conn;
     }
 
-    public List<Cliente> getAllClienti() {
+    public List<Cliente> getAllClienti() { //metodo che resituisce una lista di oggetti Cliente
         List<Cliente> clienti = new ArrayList<>();
 
         try (Statement stmt = conn.createStatement();
@@ -24,7 +24,10 @@ public class ClienteDAO {
                 Cliente c = new Cliente();
                 c.setId(rs.getInt("id"));
                 c.setNome(rs.getString("nome"));
+                c.setIndirizzo(rs.getString("indirizzo"));
                 c.setEmail(rs.getString("email"));
+                c.setTelefono(rs.getString("telefono"));
+                c.setPunti(rs.getInt("punti"));
                 clienti.add(c);
             }
 
@@ -49,7 +52,10 @@ public class ClienteDAO {
                     c = new Cliente();
                     c.setId(rs.getInt("id"));
                     c.setNome(rs.getString("nome"));
+                    c.setIndirizzo(rs.getString("indirizzo"));
                     c.setEmail(rs.getString("email"));
+                    c.setTelefono(rs.getString("telefono"));
+                    c.setPunti(rs.getInt("punti"));
                 }
 
             }
@@ -66,7 +72,10 @@ public class ClienteDAO {
         try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO clienti (nome, email) VALUES (?, ?)")) {
 
             stmt.setString(1, c.getNome());
-            stmt.setString(2, c.getEmail());
+            stmt.setString(2, c.getIndirizzo());
+            stmt.setString(3, c.getEmail());
+            stmt.setString(4, c.getTelefono());
+            stmt.setInt(5, c.getPunti());
             stmt.executeUpdate();
 
         } catch (SQLException e) {

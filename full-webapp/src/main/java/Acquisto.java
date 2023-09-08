@@ -7,13 +7,13 @@ public class Acquisto {
     private int idCliente;
     private Date dataAcquisto;
     //aggiunto tot
-    private int tot;
+    private Double tot;
 
     // Costruttore vuoto
     public Acquisto() {}
 
     // Costruttore con parametri
-    public Acquisto(int id, int idProdotto, int idCliente, Date dataAcquisto, int tot) {
+    public Acquisto(int id, int idProdotto, int idCliente, Date dataAcquisto, Double tot) {
         this.id = id;
         this.idProdotto = idProdotto;
         this.idCliente = idCliente;
@@ -57,11 +57,11 @@ public class Acquisto {
     }
 
     //aggiunto getter e setter per totale
-    public int getTot() {
+    public Double getTot() {
         return tot;
     }
 
-    public void setTotale(int tot) {
+    public void setTotale(Double tot) {
         this.tot = tot;
     }
 }

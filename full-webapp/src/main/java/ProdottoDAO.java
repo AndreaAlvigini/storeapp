@@ -8,23 +8,27 @@ import java.util.List;
 
 public class ProdottoDAO {
 
-    private Connection conn;
+    private Connection conn; //connessione
 
-    public ProdottoDAO(Connection conn) {
+    public ProdottoDAO(Connection conn) { //costruttore di classe
         this.conn = conn;
     }
 
-    public List<Prodotto> getAllProdotti() {
-        List<Prodotto> prodotti = new ArrayList<>();
+    public List<Prodotto> getAllProdotti() { //metodo che restituisce una lista di oggetti Prodotto
+        List<Prodotto> prodotti = new ArrayList<>(); //creazione della lista
 
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM prodotti")) {
 
             while(rs.next()) {
-                Prodotto p = new Prodotto();
+                Prodotto p = new Prodotto(); //creazione oggetto prodotto
+                //utilizzo il metodo di Prodotto p per assegnare il valore all'id del prodotto,
+                //leggendolo dal valore della colonna della riga corrente del ResultSet
                 p.setId(rs.getInt("id"));
                 p.setNome(rs.getString("nome"));
+                p.setDescrizione(rs.getString("descrizione"));
                 p.setPrezzo(rs.getDouble("prezzo"));
+                p.setImmagine(rs.getString("immagine"));
                 prodotti.add(p);
             }
 
@@ -33,23 +37,25 @@ public class ProdottoDAO {
             e.printStackTrace();
         }
 
-        return prodotti;
+        return prodotti; //riporta la lista di Prodotti
     }
 
-    public Prodotto getProdottoById(int id) {
-        Prodotto p = null;
+    public Prodotto getProdottoById(int id) { //metodo di selezione prodotto in base all'id (in input) che restituisce un oggetto Prodotto
+        Prodotto p = null; //creazione oggetto prodotto vuoto
 
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT * FROM prodotti WHERE id = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT * FROM prodotti WHERE id = ?")) { //selezione dalla tabella prodotti in base all'id
 
             stmt.setInt(1, id);
 
             try (ResultSet rs = stmt.executeQuery()) {
 
-                if(rs.next()) {
+                if(rs.next()) { //assegnazione dei valori all'oggetto Prodotto in base alla riga dell'id fornito
                     p = new Prodotto();
                     p.setId(rs.getInt("id"));
                     p.setNome(rs.getString("nome"));
+                    p.setDescrizione(rs.getString("descrizione"));
                     p.setPrezzo(rs.getDouble("prezzo"));
+                    p.setImmagine(rs.getString("immagine"));
                 }
 
             }
@@ -59,17 +65,30 @@ public class ProdottoDAO {
             e.printStackTrace();
         }
 
-        return p;
+        return p; //riporta il prodotto completo
     }
 
-    public void insertProdotto(Prodotto p) {
-        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO prodotti (nome, prezzo) VALUES (?, ?)")) {
+    public void insertProdotto(Prodotto p) { //metodo di inserimento che prende in input un Prodotto (p)
+        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO prodotti (nome, descrizione, prezzo, immagine) VALUES (?, ?, ?, ?)")) {
 
-            stmt.setString(1, p.getNome());
-            stmt.setDouble(2, p.getPrezzo());
+            stmt.setString(1, p.getNome()); //riporto i valori nella riga della tabella prodotti
+            stmt.setString(2, p.getDescrizione());
+            stmt.setDouble(3, p.getPrezzo());
+            stmt.setString(4, p.getImmagine());
             stmt.executeUpdate();
+        }catch (SQLException e) {
+            // gestisci l'eccezione
+            e.printStackTrace();
+        }
 
-        } catch (SQLException e) {
+        
+    }
+
+    public void cancellaProdotto(int id){ //metodo per cancellare un prodotto che prende in input l'id
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM prodotti WHERE id = ?")){
+            stmt.setInt(1, id); // Cancella il prodotto in base all'id
+            stmt.executeUpdate();
+        }catch (SQLException e) {
             // gestisci l'eccezione
             e.printStackTrace();
         }
